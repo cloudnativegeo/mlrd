@@ -1,2 +1,1 @@
-# mlrd
-Machine Learning Ready Data
+# Machine Learning Ready Data
