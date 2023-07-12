@@ -1,0 +1,89 @@
+{
+    "type": "FeatureCollection",
+    "process": {
+        "input_collections": [
+            "sentinel-2-l2a"
+        ],
+        "workflow": "cog-archive",
+        "upload_options": {
+            "path_template": "s3://sentinel-cogs/${collection}/${grid:utm_zone}/${grid:latitude_band}/${grid:grid_square}/${year}/${month}/${id}",
+            "public_assets": "ALL",
+            "collections": {
+                "sentinel-2-l2a": "$[?(@.id =~ 'S2[AB].*')]"
+            },
+            "headers": {
+                "CacheControl": "public, max-age=31536000, immutable"
+            }
+        },
+        "tasks": [
+            {   
+                "name": "inference",
+                "parameters": {
+                    "test": "foobar"
+                }
+            }
+        ]
+    },
+    "features": [
+        {
+            "id": "ref_landcovernet_sa_v1_labels_17NRB_00",
+            "datetime": "2018-07-01T00:00:00Z",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -77.81057792539683,
+                            0.9392721120508254
+                        ],
+                        [
+                            -77.81055668144066,
+                            0.962397053731636
+                        ],
+                        [
+                            -77.83353035617907,
+                            0.9624186203295519
+                        ],
+                        [
+                            -77.83355144774016,
+                            0.9392931603458728
+                        ],
+                        [
+                            -77.81057792539683,
+                            0.9392721120508254
+                        ]
+                    ]
+                ]
+            },
+            "assets": {
+                "labels": {
+                    "href": "https://radiantearth.blob.core.windows.net/mlhub/landcovernet_sa/data/v1.0/2018/17NRB/00/17NRB_00_2018_LC_10m.tif",
+                    "title": "Land Cover"
+                },
+                "source_dates": {
+                    "href": "https://radiantearth.blob.core.windows.net/mlhub/landcovernet_sa/data/v1.0/2018/17NRB/00/17NRB_00_labeling_dates.csv",
+                    "type": "text/csv",
+                    "title": "Source Imagery Dates"
+                },
+                "documentation": {
+                    "href": "https://radiantearth.blob.core.windows.net/mlhub/landcovernet_sa/Documentation.pdf",
+                    "type": "application/pdf"
+                }
+            },
+            "collection": "ref_landcovernet_sa_v1_labels",
+            "properties": {
+                "datetime": "2018-07-01T00:00:00Z"
+            },
+            "bbox": [
+                -77.83355144774016,
+                0.9392721120508254,
+                -77.81055668144066,
+                0.9624186203295519
+            ],
+            "type": "Feature",
+            "stac_version": "1.0.0",
+            "links": [
+            ]
+        }
+    ]
+}
