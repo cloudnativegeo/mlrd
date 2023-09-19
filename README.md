@@ -15,7 +15,7 @@ The goal of the Machine Learning Ready Data (MLRD: pronounced Mallard) specifica
 
 ## Problems
 
-### 1) Duplication of Imagery in Training Datasets
+### 1) Bulk of Imagery in Training Datasets
 
 Geospatial machine learning training datasets typically consist of label files (GeoTIFF, GeoJSON) and matching imagery (Sentinel-2, Sentinel-1, Landsat-8). Imagery is downloaded from the source, pre-processed (normalized, chipped, renamed), and packaged with the labels as a "completed" training dataset. Given the nature of geospatial data, this training dataset can quickly become unwieldy. A "small" training dataset of a few hundred samples can be multiple gigabytes while large training datasets are multiple terabytes. The bulk of these packages come from the imagery rather than the actual labels.
 
@@ -34,7 +34,7 @@ Training datasets should only contain the labels for the task and enough context
 
 Model code should have two interfaces: one which trains and finetunes the model weights, and another which runs inferences. The training and finetuning interface should take a MLRD training dataset catalog as an input, load the label data, load (locate, download, transform) the linked imagery, and train the model. The inferencing interface should take in a date-time (or date-time range) and geometry, load (locate, download, transform) the imagery required for inferencing from the model's sources, and returned the inferencing result.
 
-## Ecosystem of Tools
+## Envisioning an Ecosystem of Tools
 
 Standardizing the format of geospatial machine learning training datasets and models enables the creation of a new ecosystem of tools similar to the ecosystem of tools created by the standardization of Spatio-Temporal metadata with STAC. The following are just a few examples of tools which could be created and interoperable if MLRD becomes adopted:
 
