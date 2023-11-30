@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "client"
+version = "0.1.0"
+description = ""
+authors = ["doug-newman-nasa <douglas.j.newamn@nasa.gov>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+torch = "^2.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
